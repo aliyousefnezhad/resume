@@ -1,0 +1,94 @@
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    margin: 0;
+    background: #f2f2f2;
+    direction: rtl;
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    width: 35%;
+    background: #4b4c8d;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.sidebar .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-bottom: 15px;
+}
+
+.sidebar h1 {
+    font-size: 22px;
+    margin: 10px 0 5px;
+}
+
+.sidebar h3 {
+    font-size: 16px;
+    margin: 20px 0 10px;
+    color: #e0e0ff;
+}
+
+.contact, .skills, .languages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: right;
+}
+
+.contact li, .languages li {
+    margin-bottom: 10px;
+}
+
+.skills li {
+    margin: 15px 0;
+}
+
+.skills span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.skills .bar {
+    background: #ccc;
+    height: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skills .bar div {
+    height: 100%;
+    background: #00ffcc;
+}
+
+.main {
+    width: 65%;
+    padding: 30px;
+    color: #333;
+}
+
+.main h2 {
+    border-bottom: 2px solid #4b4c8d;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.main ul {
+    padding-right: 20px;
+    font-size: 15px;
+    line-height: 1.8;
+}
