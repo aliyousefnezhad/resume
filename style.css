@@ -1,94 +1,315 @@
+ /* تنظیمات کلی - بهینه‌سازی برای چاپ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
 
-body {
-    font-family: 'Vazirmatn', sans-serif;
-    margin: 0;
-    background: #f2f2f2;
-    direction: rtl;
-}
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-.container {
-    display: flex;
-    max-width: 1000px;
-    margin: 40px auto;
-    background: #fff;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
+        .container {
+            display: flex;
+            background: #fff;
+            box-shadow: 0 0 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+        }
 
-.sidebar {
-    width: 35%;
-    background: #4b4c8d;
-    color: #fff;
-    padding: 30px;
-    text-align: center;
-}
+        /* نوار کناری - بهینه‌سازی رنگ برای چاپ */
+        .sidebar {
+            width: 35%;
+            background: #2E3A59;
+            color: #fff;
+            padding: 35px 25px;
+            text-align: center;
+        }
 
-.sidebar .profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    margin-bottom: 15px;
-}
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.2);
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+        }
 
-.sidebar h1 {
-    font-size: 22px;
-    margin: 10px 0 5px;
-}
+        .sidebar h1 {
+            font-size: 28px;
+            margin: 15px 0 5px;
+            font-weight: 700;
+            color: #fff;
+        }
 
-.sidebar h3 {
-    font-size: 16px;
-    margin: 20px 0 10px;
-    color: #e0e0ff;
-}
+        .sidebar h2 {
+            font-size: 18px;
+            color: #00ffcc;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
 
-.contact, .skills, .languages {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-    text-align: right;
-}
+        .sidebar h3 {
+            font-size: 20px;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(0,255,204,0.3);
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
 
-.contact li, .languages li {
-    margin-bottom: 10px;
-}
+        .sidebar h3::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 2px;
+            background: #00ffcc;
+        }
 
-.skills li {
-    margin: 15px 0;
-}
+        .contact, .skills, .languages {
+            list-style: none;
+            text-align: right;
+            padding: 0 15px;
+        }
 
-.skills span {
-    display: block;
-    margin-bottom: 5px;
-}
+        .contact li, .languages li {
+            margin-bottom: 15px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.skills .bar {
-    background: #ccc;
-    height: 5px;
-    border-radius: 10px;
-    overflow: hidden;
-}
+        .contact li i, .languages li i {
+            width: 25px;
+            height: 25px;
+            background: rgba(0,255,204,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
 
-.skills .bar div {
-    height: 100%;
-    background: #00ffcc;
-}
+        .skills li {
+            margin: 20px 0;
+        }
 
-.main {
-    width: 65%;
-    padding: 30px;
-    color: #333;
-}
+        .skills span {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
 
-.main h2 {
-    border-bottom: 2px solid #4b4c8d;
-    padding-bottom: 5px;
-    margin-top: 30px;
-    font-size: 20px;
-}
+        .skills .bar {
+            background: rgba(255,255,255,0.15);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-.main ul {
-    padding-right: 20px;
-    font-size: 15px;
-    line-height: 1.8;
-}
+        .skills .bar div {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffcc, #00b3a7);
+        }
+
+        .languages li {
+            font-size: 16px;
+            padding: 8px 0;
+        }
+
+        /* بخش اصلی - بهینه‌سازی برای چاپ */
+        .main {
+            width: 65%;
+            padding: 40px 35px;
+            color: #333;
+        }
+
+        .main h2 {
+            font-size: 24px;
+            color: #2E3A59;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2E3A59;
+            position: relative;
+        }
+
+        .main h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 120px;
+            height: 2px;
+            background: #00ffcc;
+        }
+
+        .main p {
+            font-size: 15px;
+            text-align: justify;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .main ul {
+            padding-right: 25px;
+        }
+
+        .main li {
+            margin-bottom: 15px;
+            font-size: 16px;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .main li::before {
+            content: "•";
+            color: #00b3a7;
+            font-size: 24px;
+            position: absolute;
+            right: 0;
+            top: -5px;
+        }
+
+        /* بخش پروژه‌ها - جدید */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: #00ffcc;
+        }
+
+        .project-card h3 {
+            color: #2E3A59;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: #2E3A59;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            background: #00b3a7;
+        }
+
+        /* دکمه چاپ */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #2E3A59;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .print-btn:hover {
+            background: #00b3a7;
+            transform: translateY(-3px);
+        }
+
+        /* بهینه‌سازی برای چاپ */
+        @media print {
+            
+            
+            body {
+                padding: 0;
+                background: #fff;
+            }
+            
+            .container {
+                box-shadow: none;
+                margin: 0;
+                display: block;
+                width: 100%;
+            }
+            
+            .sidebar, .main {
+                width: 100%;
+                padding: 25px;
+                page-break-inside: avoid;
+            }
+            
+            .sidebar {
+                background: #2E3A59 !important;
+                color: #fff;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .skills .bar div {
+                background: #00b3a7 !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .print-btn {
+                display: none;
+            }
+            
+            @page {
+                size: A4;
+                margin: 1.5cm;
+            }
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar, .main {
+                width: 100%;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
